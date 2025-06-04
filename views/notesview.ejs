@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Notes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    .note {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+    }
+    .note h2 {
+      margin: 0 0 10px 0;
+      font-size: 20px;
+    }
+    .note p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hello, <%= myname %>! Here are your notes:</h1>
+
+  <% if (noteslist.length > 0) { %>
+    <% noteslist.forEach(note => { %>
+      <div class="note">
+        <h2><%= note.title %></h2>
+        <p><%= note.content %></p>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>No notes found. Try adding some!</p>
+  <% } %>
+
+</body>
+</html>

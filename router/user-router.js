@@ -5,8 +5,7 @@ const userController = require("../controllers/userController");
 
 userRouter.get("/", userController.getHome);  
 
-userRouter.post("/addnote",(req,res) =>{
-  console.log(req.body);
-})
+userRouter.post("/addnote",userController.postHome); 
+userRouter.get("/notes-list", userController.getNotes);
 
 module.exports = userRouter;
